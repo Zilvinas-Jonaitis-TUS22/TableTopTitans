@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d881e962d099f4a8eb492ef7e9a8c0, type: 3}
-  m_Name: OculusPlatformSettings
+  m_Script: {fileID: 11500000, guid: 2b76bcf034ab49e4a8cd30239a716460, type: 3}
+  m_Name: MetaXRAcousticSettings
   m_EditorClassIdentifier: 
-  ovrAppID: 9179366368841203
-  ovrMobileAppID: 9179366368841203
-  ovrUseMobileAppIDInEditor: 0
-  ovrUseStandalonePlatform: 0
+  acousticModel: -1
+  diffractionEnabled: 1
+  excludeTags: []
+  mapBakeWriteGeo: 1
