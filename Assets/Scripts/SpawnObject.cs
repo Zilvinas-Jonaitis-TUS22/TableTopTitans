@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
+    [Header ("Objects To Spawn")]
     public GameObject malePrefab;
     public GameObject femalePrefab;
     public GameObject enemyPrefab;
     public GameObject treePrefab;
     public GameObject rockPrefab;
+
+    [Header ("Dice To Spawn")]
+    public GameObject D4Prefab;
+    public GameObject D6Prefab;
+    public GameObject D8Prefab;
+    public GameObject D10Prefab;
+    public GameObject D12Prefab;
+    public GameObject D20Prefab;
+
+    [Header ("Spawn Area")]
     public GameObject spawnArea;
     private BoxCollider spawnAreaCollider;
 
@@ -97,5 +108,36 @@ public class SpawnObject : MonoBehaviour
     public void SpawnRock()
     {
         SpawnObjectAtPosition(rockPrefab);
+    }
+
+    public void SpawnD4()
+    {
+        SpawnObjectAtPosition(D4Prefab);
+    }
+
+    public void SpawnD6()
+    {
+        SpawnObjectAtPosition(D6Prefab);
+    }
+
+    public void SpawnD8()
+    {
+        SpawnObjectAtPosition(D8Prefab);
+    }
+
+    public void SpawnD10()
+    {
+        SpawnObjectAtPosition(D10Prefab);
+
+    }
+
+    public void SpawnD12()
+    {
+        SpawnObjectAtPosition(D12Prefab);
+    }
+
+    public void SpawnD20()
+    {
+        SpawnObjectAtPosition(D20Prefab);
     }
 }
