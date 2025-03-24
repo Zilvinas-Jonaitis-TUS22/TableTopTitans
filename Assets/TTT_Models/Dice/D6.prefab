@@ -73,7 +73,7 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 8476877884508638988}
   _maxGrabPoints: -1
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 268741328939822295}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
 --- !u!114 &5053226222333152968
@@ -93,9 +93,9 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1701296486094593122}
-  _boundsCollider: {fileID: 5668995490169532048}
+  _boundsCollider: {fileID: 6858211021894406747}
   _colliders:
-  - {fileID: 8708384514566723284}
+  - {fileID: 6858211021894406747}
 --- !u!1 &5308249218579263529
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,8 +108,9 @@ GameObject:
   - component: {fileID: 1887643447744873185}
   - component: {fileID: 574344267665931277}
   - component: {fileID: 951846022345688039}
-  - component: {fileID: 5668995490169532048}
-  - component: {fileID: 8708384514566723284}
+  - component: {fileID: 6858211021894406747}
+  - component: {fileID: 7224362458824691819}
+  - component: {fileID: 268741328939822295}
   m_Layer: 0
   m_Name: D6
   m_TagString: Untagged
@@ -201,7 +202,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5668995490169532048
+--- !u!65 &6858211021894406747
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,9 +221,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 0.011547006, y: 0.011547006, z: 0.011547006}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &8708384514566723284
+--- !u!64 &7224362458824691819
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,4 +244,31 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4085365545091582050, guid: a35322fcd9977a54787d2d67985824e6, type: 3}
+--- !u!54 &268741328939822295
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308249218579263529}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
