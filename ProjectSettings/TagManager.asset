@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FigurineA
   - FigurineB
+  - FigurineC
   layers:
   - Default
   - TransparentFX

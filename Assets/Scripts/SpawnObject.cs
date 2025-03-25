@@ -34,44 +34,27 @@ public class SpawnObject : MonoBehaviour
 
     private void SpawnObjectAtPosition(GameObject prefab)
     {
-
         if (currentSpawnedObject != null)
         {
-            // If the object is inside the spawn area, destroy it
-            if (IsObjectInSpawnArea(currentSpawnedObject))
-            {
-                Destroy(currentSpawnedObject);
-            }
+            Destroy(currentSpawnedObject);
         }
 
-
-        Vector3 spawnCenter = spawnAreaCollider.transform.position + spawnAreaCollider.center;
-        Vector3 spawnSize = spawnAreaCollider.size;
-        float xPos = Random.Range(spawnCenter.x - spawnSize.x / 2, spawnCenter.x + spawnSize.x / 2);
-        float yPos = Random.Range(spawnCenter.y - spawnSize.y / 2, spawnCenter.y + spawnSize.y / 2);
-        float zPos = Random.Range(spawnCenter.z - spawnSize.z / 2, spawnCenter.z + spawnSize.z / 2);
-
-        Vector3 spawnPosition = new Vector3(xPos, yPos, zPos);
-
+        Bounds bounds = spawnAreaCollider.bounds;
+        Vector3 spawnPosition = GetCenteredSpawnPosition(bounds, prefab);
 
         currentSpawnedObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
-    private void Update()
+    private Vector3 GetCenteredSpawnPosition(Bounds bounds, GameObject prefab)
     {
+        Collider prefabCollider = prefab.GetComponent<Collider>();
+        float objectHeight = prefabCollider ? prefabCollider.bounds.size.y : 1f; // Default height if no collider
 
-        // Check if the object is still in the spawn area, and destroy it if necessary
-        if (currentSpawnedObject != null && IsObjectInSpawnArea(currentSpawnedObject))
-        {
-            // If the current object is inside the spawn area, we don't need to destroy it yet
-            return;
-        }
+        float xPos = bounds.center.x;
+        float zPos = bounds.center.z;
+        float yPos = bounds.center.y + (bounds.extents.y) + (objectHeight / 2); // Spawn just above the middle
 
-        // If the object is outside the spawn area, allow for the next object to be spawned
-        if (currentSpawnedObject != null && !IsObjectInSpawnArea(currentSpawnedObject))
-        {
-            currentSpawnedObject = null; // Object is outside the spawn area, so reset
-        }
+        return new Vector3(xPos, yPos, zPos);
     }
 
     private bool IsObjectInSpawnArea(GameObject obj)
@@ -83,7 +66,6 @@ public class SpawnObject : MonoBehaviour
         }
         return false;
     }
-
 
     public void SpawnMale()
     {

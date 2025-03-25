@@ -4,32 +4,29 @@ using UnityEngine;
 
 public class FigurineSwitcher : MonoBehaviour
 {
-    public GameObject FigurineA;
-    public GameObject FigurineB;
+    public GameObject[] figurines; // Array of figurines
+    private int currentIndex = 0; // Tracks the active figurine
 
-    private bool isFigurineAActive = true;
+    void Start()
+    {
+        // Ensure only the first figurine is active at the start
+        for (int i = 0; i < figurines.Length; i++)
+        {
+            figurines[i].SetActive(i == 0); // Activate only the first figurine
+        }
+    }
 
     public void SwapFigurine()
     {
-        Transform activeTransform = isFigurineAActive ? FigurineA.transform : FigurineB.transform;
+        // Disable the current figurine
+        figurines[currentIndex].SetActive(false);
 
-        isFigurineAActive = !isFigurineAActive;
+        // Move to the next figurine in the cycle
+        currentIndex = (currentIndex + 1) % figurines.Length;
 
-        if (isFigurineAActive)
-        {
-            FigurineA.transform.SetPositionAndRotation(activeTransform.position, activeTransform.rotation);
-        }
-        else
-        {
-            FigurineB.transform.SetPositionAndRotation(activeTransform.position, activeTransform.rotation);
-        }
-
-
-        FigurineA.SetActive(isFigurineAActive);
-        FigurineB.SetActive(!isFigurineAActive);
-
-
+        // Enable the new figurine
+        figurines[currentIndex].SetActive(true);
     }
 
-  
+
 }
