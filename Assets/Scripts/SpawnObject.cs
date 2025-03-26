@@ -73,6 +73,7 @@ public class SpawnObject : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         rb.useGravity = true;
+        rb.isKinematic = false;
     }
 
     public void SpawnMale() => SpawnObjectAtPosition(malePrefab);
