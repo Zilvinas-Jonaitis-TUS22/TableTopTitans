@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [Header ("Objects To Spawn")]
+    [Header("Objects To Spawn")]
     public GameObject malePrefab;
     public GameObject femalePrefab;
     public GameObject enemyPrefab;
     public GameObject treePrefab;
     public GameObject rockPrefab;
 
-    [Header ("Dice To Spawn")]
+    [Header("Dice To Spawn")]
     public GameObject D4Prefab;
     public GameObject D6Prefab;
     public GameObject D8Prefab;
@@ -19,17 +19,15 @@ public class SpawnObject : MonoBehaviour
     public GameObject D12Prefab;
     public GameObject D20Prefab;
 
-    [Header ("Spawn Area")]
+    [Header("Spawn Area")]
     public GameObject spawnArea;
     private BoxCollider spawnAreaCollider;
 
     private GameObject currentSpawnedObject;
 
-   
     void Start()
     {
-   spawnAreaCollider = spawnArea.GetComponent<BoxCollider>();
-
+        spawnAreaCollider = spawnArea.GetComponent<BoxCollider>();
     }
 
     private void SpawnObjectAtPosition(GameObject prefab)
@@ -40,86 +38,52 @@ public class SpawnObject : MonoBehaviour
         }
 
         Bounds bounds = spawnAreaCollider.bounds;
-        Vector3 spawnPosition = GetCenteredSpawnPosition(bounds, prefab);
+        Vector3 spawnPosition = GetSpawnPositionAbove(bounds, prefab);
 
         currentSpawnedObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        // If the object has a Rigidbody, disable gravity for a brief moment to avoid physics errors
+        Rigidbody rb = currentSpawnedObject.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            StartCoroutine(EnableGravityAfterDelay(rb, 0.1f));
+        }
     }
 
-    private Vector3 GetCenteredSpawnPosition(Bounds bounds, GameObject prefab)
+    private Vector3 GetSpawnPositionAbove(Bounds bounds, GameObject prefab)
     {
         Collider prefabCollider = prefab.GetComponent<Collider>();
         float objectHeight = prefabCollider ? prefabCollider.bounds.size.y : 1f; // Default height if no collider
 
         float xPos = bounds.center.x;
         float zPos = bounds.center.z;
-        float yPos = bounds.center.y + (bounds.extents.y) + (objectHeight / 2); // Spawn just above the middle
+        float yPos = bounds.max.y + (objectHeight / 2); // Ensure object spawns just above
+
+        // Use a raycast to find the exact top of the spawn area
+        RaycastHit hit;
+        if (Physics.Raycast(new Vector3(xPos, bounds.max.y + 1f, zPos), Vector3.down, out hit, 5f))
+        {
+            yPos = hit.point.y + (objectHeight / 2); // Adjust spawn height
+        }
 
         return new Vector3(xPos, yPos, zPos);
     }
 
-    private bool IsObjectInSpawnArea(GameObject obj)
+    private IEnumerator EnableGravityAfterDelay(Rigidbody rb, float delay)
     {
-        Collider objectCollider = obj.GetComponent<Collider>();
-        if (objectCollider != null && spawnAreaCollider.bounds.Intersects(objectCollider.bounds))
-        {
-            return true;
-        }
-        return false;
+        yield return new WaitForSeconds(delay);
+        rb.useGravity = true;
     }
 
-    public void SpawnMale()
-    {
-        SpawnObjectAtPosition(malePrefab);
-    }
-
-    public void SpawnFemale()
-    {
-        SpawnObjectAtPosition(femalePrefab);
-    }
-
-    public void SpawnEnemy()
-    {
-        SpawnObjectAtPosition(enemyPrefab);
-    }
-
-    public void SpawnTree()
-    {
-        SpawnObjectAtPosition(treePrefab);
-    }
-
-    public void SpawnRock()
-    {
-        SpawnObjectAtPosition(rockPrefab);
-    }
-
-    public void SpawnD4()
-    {
-        SpawnObjectAtPosition(D4Prefab);
-    }
-
-    public void SpawnD6()
-    {
-        SpawnObjectAtPosition(D6Prefab);
-    }
-
-    public void SpawnD8()
-    {
-        SpawnObjectAtPosition(D8Prefab);
-    }
-
-    public void SpawnD10()
-    {
-        SpawnObjectAtPosition(D10Prefab);
-
-    }
-
-    public void SpawnD12()
-    {
-        SpawnObjectAtPosition(D12Prefab);
-    }
-
-    public void SpawnD20()
-    {
-        SpawnObjectAtPosition(D20Prefab);
-    }
+    public void SpawnMale() => SpawnObjectAtPosition(malePrefab);
+    public void SpawnFemale() => SpawnObjectAtPosition(femalePrefab);
+    public void SpawnEnemy() => SpawnObjectAtPosition(enemyPrefab);
+    public void SpawnTree() => SpawnObjectAtPosition(treePrefab);
+    public void SpawnRock() => SpawnObjectAtPosition(rockPrefab);
+    public void SpawnD4() => SpawnObjectAtPosition(D4Prefab);
+    public void SpawnD6() => SpawnObjectAtPosition(D6Prefab);
+    public void SpawnD8() => SpawnObjectAtPosition(D8Prefab);
+    public void SpawnD10() => SpawnObjectAtPosition(D10Prefab);
+    public void SpawnD12() => SpawnObjectAtPosition(D12Prefab);
+    public void SpawnD20() => SpawnObjectAtPosition(D20Prefab);
 }
