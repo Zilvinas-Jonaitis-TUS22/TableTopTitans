@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FigurineSwitcher : MonoBehaviour
@@ -27,6 +25,4 @@ public class FigurineSwitcher : MonoBehaviour
         // Enable the new figurine
         figurines[currentIndex].SetActive(true);
     }
-
-
 }
