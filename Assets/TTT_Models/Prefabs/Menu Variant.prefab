@@ -8531,17 +8531,17 @@ MonoBehaviour:
     type: 3}
   rockPrefab: {fileID: 2703767558519537975, guid: 7ed39ca6edc75e94faeffe327f589146,
     type: 3}
-  D4Prefab: {fileID: 2867934727936732096, guid: 5992e663511417a499fe323fecbfecf4,
+  D4Prefab: {fileID: 5757011924877215791, guid: e94857bc9f89f6341a106a869f82660b,
     type: 3}
-  D6Prefab: {fileID: 5308249218579263529, guid: 83a1abedebaf3234db623b7ddf730a55,
+  D6Prefab: {fileID: 4344732027121319073, guid: 35b4ebd4bacfc7e41915a9c9c5ffccba,
     type: 3}
-  D8Prefab: {fileID: 7610059594868911063, guid: d4a9deca5ceadfd4f94ed5483eb97b95,
+  D8Prefab: {fileID: 2966746090968336591, guid: 255e3f955f5870c41ab3e2a8c62c914c,
     type: 3}
-  D10Prefab: {fileID: 2462649521912859366, guid: 2b2a4d44565e68e428394b1374a6b1d4,
+  D10Prefab: {fileID: 2301668726377929758, guid: 47090c913cf6fdf4083adc683d18d0d8,
     type: 3}
-  D12Prefab: {fileID: 4785645898468442391, guid: 108c4fb00fbd8d84bbe294ef8ff35047,
+  D12Prefab: {fileID: 6506145773359137226, guid: acbdd6fa2bf6bf44a959af47a8a5f70d,
     type: 3}
-  D20Prefab: {fileID: 5415549387100108339, guid: 58a466c85e4592c47b7f447c96c4660c,
+  D20Prefab: {fileID: 6741506913946083323, guid: f93b62f43be99d24680d022a204cb192,
     type: 3}
   spawnArea: {fileID: 1441797622636490614, guid: e3e282fb01897954485648832c29c8f2,
     type: 3}
