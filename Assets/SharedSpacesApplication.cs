@@ -7,6 +7,7 @@ using Oculus.Platform;
 using System.Collections;
 using UnityEngine;
 
+/*
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -28,9 +29,11 @@ public static class SharedSpacesTelemetry
     }
 }
 #endif
-
+*/
 public class SharedSpacesApplication : MonoBehaviour
 {
+    public bool Synced = false;
+
     private void Start()
     {
         StartAsync();
@@ -38,7 +41,7 @@ public class SharedSpacesApplication : MonoBehaviour
 
     private void StartAsync()
     {
-        Core.AsyncInitialize("9179366368841203").OnComplete(OnOculusPlatformInitialized);
+        Core.AsyncInitialize().OnComplete(OnOculusPlatformInitialized);
 
     }
     private void OnOculusPlatformInitialized(Message<Oculus.Platform.Models.PlatformInitialize> message)
@@ -49,6 +52,7 @@ public class SharedSpacesApplication : MonoBehaviour
             return;
         }
 
+        Synced = true;
         Debug.Log("Oculus Platform SDK initialized successfully");
     }
     private void LogError(string message, Oculus.Platform.Models.Error error)
