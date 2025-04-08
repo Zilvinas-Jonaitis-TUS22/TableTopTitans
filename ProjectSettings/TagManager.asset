@@ -8,6 +8,16 @@ TagManager:
   - FigurineB
   - FigurineC
   - SamplesInfoPanel
+  - QDSUITextSecondaryColor
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUIToggleSwitch
+  - QDSUITooltip
+  - QDSUISharedThemeColor
+  - QDSUIAccentColor
+  - QDSUIBorderlessButton
+  - QDSUISecondaryButton
+  - QDSUIToggleBorderlessButton
   layers:
   - Default
   - TransparentFX
