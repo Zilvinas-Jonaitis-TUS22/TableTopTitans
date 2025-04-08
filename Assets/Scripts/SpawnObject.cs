@@ -32,11 +32,19 @@ public class SpawnObject : MonoBehaviour
 
     private void SpawnObjectAtPosition(GameObject prefab)
     {
-        if (currentSpawnedObject != null)
+        // Check if there is a current object, and if it needs to be replaced (only if it's in the spawn area)
+        if (currentSpawnedObject != null && !IsObjectWithinSpawnArea(currentSpawnedObject))
         {
+            // It's outside the spawn area, so don't destroy it, but you could choose to do so if needed
+            Debug.Log("Object is outside the spawn area, not destroyed.");
+        }
+        else if (currentSpawnedObject != null)
+        {
+            // Only destroy the current object if it's within the spawn area
             Destroy(currentSpawnedObject);
         }
 
+        // Proceed with spawning a new object
         Bounds bounds = spawnAreaCollider.bounds;
         Vector3 spawnPosition = GetSpawnPositionAbove(bounds, prefab);
 
@@ -48,6 +56,12 @@ public class SpawnObject : MonoBehaviour
         {
             StartCoroutine(EnableGravityAfterDelay(rb, 0.1f));
         }
+    }
+
+    private bool IsObjectWithinSpawnArea(GameObject obj)
+    {
+        Bounds areaBounds = spawnAreaCollider.bounds;
+        return areaBounds.Contains(obj.transform.position); // Check if the object's position is within the spawn area
     }
 
     private Vector3 GetSpawnPositionAbove(Bounds bounds, GameObject prefab)

@@ -1840,7 +1840,7 @@ MonoBehaviour:
     PrefabSelection: 1
     MatchAspectRatio: 1
     CalculateFacingDirection: 0
-    Scaling: 3
+    Scaling: 4
     Alignment: 2
     IgnorePrefabSize: 0
 --- !u!114 &248692488
@@ -14676,7 +14676,7 @@ PrefabInstance:
         type: 3}
       propertyPath: malePrefab
       value: 
-      objectReference: {fileID: 4305393555560689258, guid: dbec989ec19fae54e8b4e85abccbdee2,
+      objectReference: {fileID: 4908478872273381637, guid: ff367f4b17a98f6479998b5233a53de7,
         type: 3}
     - target: {fileID: 8399053742925442964, guid: 4a3bf047d692bd449b2b4a9272bec4cf,
         type: 3}
@@ -14694,13 +14694,13 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 8423246702057575844, guid: 37c33dfc608155e4e926083c98fd065e,
+      objectReference: {fileID: 4161714882725141252, guid: 33bc8e69921be644087b893a3f9b143b,
         type: 3}
     - target: {fileID: 8399053742925442964, guid: 4a3bf047d692bd449b2b4a9272bec4cf,
         type: 3}
       propertyPath: femalePrefab
       value: 
-      objectReference: {fileID: 7910135805596385117, guid: 23b0589465afd0c40b1e67ed59a1c497,
+      objectReference: {fileID: 2159197783824496533, guid: 74d92a55c5c0373419813d32d18ac8fb,
         type: 3}
     - target: {fileID: 8457218543525165310, guid: 4a3bf047d692bd449b2b4a9272bec4cf,
         type: 3}
