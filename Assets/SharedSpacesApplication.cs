@@ -38,7 +38,8 @@ public class SharedSpacesApplication : MonoBehaviour
 
     private void StartAsync()
     {
-        Core.AsyncInitialize().OnComplete(OnOculusPlatformInitialized);
+        Core.AsyncInitialize("9179366368841203").OnComplete(OnOculusPlatformInitialized);
+
     }
     private void OnOculusPlatformInitialized(Message<Oculus.Platform.Models.PlatformInitialize> message)
     {
