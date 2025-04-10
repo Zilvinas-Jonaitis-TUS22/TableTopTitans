@@ -8909,7 +8909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0043f787439adaa4eb75049cff929530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationApi: TableTopTitans Playground
+  destinationApi: TTTPlayground
   inviteMessage: Let's play together!
   maxRetries: 3
   onMatchRequestFound:

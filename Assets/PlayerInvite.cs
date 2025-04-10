@@ -5,7 +5,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
-using Oculus.Platform;
 
 public class SharedSpacesInvitePanel : MonoBehaviour
 {
@@ -13,12 +12,5 @@ public class SharedSpacesInvitePanel : MonoBehaviour
 
     public void ButtonPressed()
     {
-        if (isOwner) return;
-
-#if !UNITY_EDITOR || !UNITY_STANDALONE_WIN
-        Debug.Log("Invited Player!");
-#else
-        GroupPresence.LaunchInvitePanel(new InviteOptions());
-#endif
     }
 }
