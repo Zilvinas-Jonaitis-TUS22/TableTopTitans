@@ -9,7 +9,11 @@ public class SpawnObject : MonoBehaviour
     public GameObject femalePrefab;
     public GameObject enemyPrefab;
     public GameObject treePrefab;
-    public GameObject rockPrefab;
+    public GameObject wall1Prefab;
+    public GameObject wall2Prefab;
+    public GameObject wall3Prefab;
+    public GameObject wall4Prefab;
+    public GameObject wall5Prefab;
 
     [Header("Dice To Spawn")]
     public GameObject D4Prefab;
@@ -94,7 +98,11 @@ public class SpawnObject : MonoBehaviour
     public void SpawnFemale() => SpawnObjectAtPosition(femalePrefab);
     public void SpawnEnemy() => SpawnObjectAtPosition(enemyPrefab);
     public void SpawnTree() => SpawnObjectAtPosition(treePrefab);
-    public void SpawnRock() => SpawnObjectAtPosition(rockPrefab);
+    public void SpawnWall1() => SpawnObjectAtPosition(wall1Prefab); 
+    public void SpawnWall2() => SpawnObjectAtPosition(wall2Prefab); 
+    public void SpawnWall3() => SpawnObjectAtPosition(wall3Prefab); 
+    public void SpawnWall4() => SpawnObjectAtPosition(wall4Prefab);  
+    public void SpawnWall5() => SpawnObjectAtPosition(wall5Prefab);
     public void SpawnD4() => SpawnObjectAtPosition(D4Prefab);
     public void SpawnD6() => SpawnObjectAtPosition(D6Prefab);
     public void SpawnD8() => SpawnObjectAtPosition(D8Prefab);
