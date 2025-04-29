@@ -41807,6 +41807,12 @@ Transform:
   - {fileID: 347320421}
   m_Father: {fileID: 820095701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1138606752 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1987558785500436858, guid: 3f3f46cc98f87d441bd947af8356ea80,
+    type: 3}
+  m_PrefabInstance: {fileID: 988850057200806310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139841395
 GameObject:
   m_ObjectHideFlags: 0
@@ -71009,8 +71015,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8032275350479176608, guid: 3f3f46cc98f87d441bd947af8356ea80,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 988850057200806312}
   m_SourcePrefab: {fileID: 100100000, guid: 3f3f46cc98f87d441bd947af8356ea80, type: 3}
+--- !u!1 &988850057200806311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8032275350479176608, guid: 3f3f46cc98f87d441bd947af8356ea80,
+    type: 3}
+  m_PrefabInstance: {fileID: 988850057200806310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &988850057200806312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988850057200806311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 0}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 0}
+  _maxGrabPoints: -1
+  _rigidbody: {fileID: 1138606752}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
 --- !u!1001 &999244749495366105
 PrefabInstance:
   m_ObjectHideFlags: 0
