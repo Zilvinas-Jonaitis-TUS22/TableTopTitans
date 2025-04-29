@@ -675,6 +675,8 @@ GameObject:
   - component: {fileID: 1791196135917369257}
   - component: {fileID: 2889743371928540561}
   - component: {fileID: 5474719904322372879}
+  - component: {fileID: 7938582705213972746}
+  - component: {fileID: 5395536153567805288}
   m_Layer: 4
   m_Name: Distance_D12
   m_TagString: Untagged
@@ -799,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3940670435
+  GlobalObjectIdHash: 2771175414
   InScenePlacedSourceGlobalObjectIdHash: 792040643
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -972,6 +974,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollingSound: {fileID: 8300000, guid: 670f59e16ace1bf43ad72263c3a0a69c, type: 3}
+--- !u!114 &7938582705213972746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506145773359137226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef3d20af292f5c40b4f87611c808c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRoll: 12
+--- !u!114 &5395536153567805288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506145773359137226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8246760206d6744b4098a91f1b8db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberPrefab: {fileID: 2261310730328178381, guid: 9118050789449a74c925c4351cbf5bb5,
+    type: 3}
 --- !u!1 &9120520346680822347
 GameObject:
   m_ObjectHideFlags: 0
