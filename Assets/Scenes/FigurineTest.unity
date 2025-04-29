@@ -41840,6 +41840,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d418fccf48b366e4e9a280b59ec92ce7, type: 2}
+    - target: {fileID: -6863293428734353120, guid: 01b39791e7dba9d4b8035683611a878b,
+        type: 3}
+      propertyPath: _rigidbody
+      value: 
+      objectReference: {fileID: 1138606752}
     - target: {fileID: 8399335863345393079, guid: 01b39791e7dba9d4b8035683611a878b,
         type: 3}
       propertyPath: m_Name
@@ -41995,6 +42000,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01b39791e7dba9d4b8035683611a878b, type: 3}
+--- !u!54 &1138606752 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 35195950706423661, guid: 01b39791e7dba9d4b8035683611a878b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1138606751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139841395
 GameObject:
   m_ObjectHideFlags: 0
