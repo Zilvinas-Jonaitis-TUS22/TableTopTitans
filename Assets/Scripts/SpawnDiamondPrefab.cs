@@ -12,7 +12,10 @@ public class SpawnDiamondPrefab : MonoBehaviour
     private float stillTimeRequired = 1.0f;
     private float stillTimer = 0f;
 
-    private DiceType diceType; // Reference to the dice's type
+    public float minRollSpeed = 30f; // Minimum speed to consider it a valid roll
+    private float highestSpeed = 0f;
+
+    private DiceType diceType;
 
     private void Awake()
     {
@@ -27,14 +30,27 @@ public class SpawnDiamondPrefab : MonoBehaviour
 
     private void Update()
     {
-        if (_rigidbody.velocity.magnitude < stillThreshold)
+        float currentSpeed = _rigidbody.velocity.magnitude;
+
+        // Track peak speed
+        if (currentSpeed > highestSpeed)
+        {
+            highestSpeed = currentSpeed;
+        }
+
+        if (currentSpeed < stillThreshold)
         {
             stillTimer += Time.deltaTime;
 
             if (stillTimer >= stillTimeRequired && !hasStopped)
             {
                 hasStopped = true;
-                SpawnNumberDisplay();
+
+                // Only spawn number if it was rolled hard enough
+                if (highestSpeed >= minRollSpeed)
+                {
+                    SpawnNumberDisplay();
+                }
             }
         }
         else
@@ -53,7 +69,6 @@ public class SpawnDiamondPrefab : MonoBehaviour
 
         GameObject display = Instantiate(numberPrefab, spawnPos, rotation);
 
-        // Pass maxRoll to the display script
         DiceNumberDisplay displayScript = display.GetComponent<DiceNumberDisplay>();
         if (displayScript != null)
         {
@@ -63,5 +78,7 @@ public class SpawnDiamondPrefab : MonoBehaviour
         {
             Debug.LogWarning("DiceNumberDisplay script missing on number prefab!");
         }
+
+        Destroy(display, 10f); // Automatically destroy after 10 seconds
     }
 }
