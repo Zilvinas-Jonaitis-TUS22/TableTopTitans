@@ -29,36 +29,39 @@ public class SpawnDiamondPrefab : MonoBehaviour
     }
 
     private void Update()
+{
+    float currentSpeed = _rigidbody.velocity.magnitude;
+
+    // Track peak speed
+    if (currentSpeed > highestSpeed)
     {
-        float currentSpeed = _rigidbody.velocity.magnitude;
+        highestSpeed = currentSpeed;
+    }
 
-        // Track peak speed
-        if (currentSpeed > highestSpeed)
+    if (currentSpeed < stillThreshold)
+    {
+        stillTimer += Time.deltaTime;
+
+        if (stillTimer >= stillTimeRequired && !hasStopped)
         {
-            highestSpeed = currentSpeed;
-        }
+            hasStopped = true;
 
-        if (currentSpeed < stillThreshold)
-        {
-            stillTimer += Time.deltaTime;
-
-            if (stillTimer >= stillTimeRequired && !hasStopped)
+            if (highestSpeed >= minRollSpeed)
             {
-                hasStopped = true;
-
-                // Only spawn number if it was rolled hard enough
-                if (highestSpeed >= minRollSpeed)
-                {
-                    SpawnNumberDisplay();
-                }
+                SpawnNumberDisplay();
             }
-        }
-        else
-        {
-            stillTimer = 0f;
-            hasStopped = false;
+
+          
+            highestSpeed = 0f;
         }
     }
+    else
+    {
+        stillTimer = 0f;
+        hasStopped = false;
+    }
+}
+
 
     private void SpawnNumberDisplay()
     {
