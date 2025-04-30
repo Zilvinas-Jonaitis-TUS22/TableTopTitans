@@ -29,6 +29,10 @@ public class SpawnObject : MonoBehaviour
 
     private GameObject currentSpawnedObject;
 
+    [Header("Portal")]
+    public ParticleSystem portalParticle1;
+    public ParticleSystem portalParticle2;
+
     void Start()
     {
         spawnAreaCollider = spawnArea.GetComponent<BoxCollider>();
@@ -113,7 +117,14 @@ public class SpawnObject : MonoBehaviour
 
     public void PortalOpen()
     {
-        //waoiofh
+        if (portalParticle1 != null)
+        {
+            portalParticle1.Play();
+        }
 
+        if (portalParticle2 != null)
+        {
+            portalParticle2.Play();
+        }
     }
 }
