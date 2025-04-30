@@ -12,6 +12,6 @@ public class DiceNumberDisplay : MonoBehaviour
     {
         int result = Random.Range(1, maxRoll + 1);
         textMesh.text = result.ToString();
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 6f);
     }
 }
