@@ -26,6 +26,7 @@ public class SpawnObject : MonoBehaviour
     [Header("Spawn Area")]
     public GameObject spawnArea;
     private BoxCollider spawnAreaCollider;
+    public GameObject objectSpawn;
 
     private GameObject currentSpawnedObject;
 
@@ -35,6 +36,7 @@ public class SpawnObject : MonoBehaviour
 
     void Start()
     {
+        portalParticle1.transform.position = objectSpawn.transform.position;
         spawnAreaCollider = spawnArea.GetComponent<BoxCollider>();
     }
 
@@ -54,7 +56,7 @@ public class SpawnObject : MonoBehaviour
 
         // Proceed with spawning a new object
         Bounds bounds = spawnAreaCollider.bounds;
-        Vector3 spawnPosition = GetSpawnPositionAbove(bounds, prefab);
+        Vector3 spawnPosition = objectSpawn.transform.position;
 
         currentSpawnedObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
 
