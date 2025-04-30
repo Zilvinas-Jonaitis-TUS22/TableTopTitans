@@ -79,6 +79,7 @@ public class SpawnDiamondPrefab : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f); // Face upward
 
         GameObject display = Instantiate(numberPrefab, spawnPos, rotation, transform);
+        display.transform.localScale = new Vector3(-0.5f, 0.8f, 0.8f);
 
         DiceNumberDisplay displayScript = display.GetComponent<DiceNumberDisplay>();
         if (displayScript != null)
