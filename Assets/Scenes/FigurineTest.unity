@@ -72334,15 +72334,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 910350370390948850, guid: 819741bcf006bcf45958f78f29f79bb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950020975696467849, guid: 819741bcf006bcf45958f78f29f79bb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357429560234420950, guid: 819741bcf006bcf45958f78f29f79bb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798938534521048978, guid: 819741bcf006bcf45958f78f29f79bb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7376174355541085853, guid: 819741bcf006bcf45958f78f29f79bb0,
         type: 3}
       propertyPath: m_Name
       value: EnemyFigurine
       objectReference: {fileID: 0}
+    - target: {fileID: 7926468278424022875, guid: 819741bcf006bcf45958f78f29f79bb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8765430677225508031, guid: 819741bcf006bcf45958f78f29f79bb0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.642
+      value: -6.843
       objectReference: {fileID: 0}
     - target: {fileID: 8765430677225508031, guid: 819741bcf006bcf45958f78f29f79bb0,
         type: 3}
@@ -72352,7 +72377,7 @@ PrefabInstance:
     - target: {fileID: 8765430677225508031, guid: 819741bcf006bcf45958f78f29f79bb0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5384
+      value: -0.123
       objectReference: {fileID: 0}
     - target: {fileID: 8765430677225508031, guid: 819741bcf006bcf45958f78f29f79bb0,
         type: 3}
@@ -72689,15 +72714,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4574009314223961963, guid: 82e9c4009983a3341b9d9acb8bb23846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5501495370382019459, guid: 82e9c4009983a3341b9d9acb8bb23846,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.339
+      value: -7.509
       objectReference: {fileID: 0}
     - target: {fileID: 5501495370382019459, guid: 82e9c4009983a3341b9d9acb8bb23846,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0731
+      value: 2.386
       objectReference: {fileID: 0}
     - target: {fileID: 5501495370382019459, guid: 82e9c4009983a3341b9d9acb8bb23846,
         type: 3}
@@ -72739,10 +72769,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5818183818393804737, guid: 82e9c4009983a3341b9d9acb8bb23846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6026171824740125089, guid: 82e9c4009983a3341b9d9acb8bb23846,
         type: 3}
       propertyPath: m_Name
       value: FemaleFigurine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417022118716555876, guid: 82e9c4009983a3341b9d9acb8bb23846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237884494743100157, guid: 82e9c4009983a3341b9d9acb8bb23846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135923453098823656, guid: 82e9c4009983a3341b9d9acb8bb23846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72830,20 +72880,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 460329180102962130, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924278644702538728, guid: 3183b23fca22dad47b00861a91eccc45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015536
+      value: -6.551
       objectReference: {fileID: 0}
     - target: {fileID: 924278644702538728, guid: 3183b23fca22dad47b00861a91eccc45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0731
+      value: 1.704
       objectReference: {fileID: 0}
     - target: {fileID: 924278644702538728, guid: 3183b23fca22dad47b00861a91eccc45,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5384
+      value: 1.6985
       objectReference: {fileID: 0}
     - target: {fileID: 924278644702538728, guid: 3183b23fca22dad47b00861a91eccc45,
         type: 3}
@@ -72884,6 +72939,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MaleFigurine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363944009699840347, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687869747898058344, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010054536091368431, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730689159058994227, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

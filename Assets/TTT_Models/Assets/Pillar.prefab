@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2295271359305283291}
+  - component: {fileID: 9189987155288633621}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 1435900755629194389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9189987155288633621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963378368724718750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02824068, y: 0.022380948, z: 0.029769883}
+  m_Center: {x: 0.00039976835, y: 0.0029172301, z: -0.0009906366}
 --- !u!1001 &1470391590110583678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,6 +112,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2419976f393ac58468965d27e9d51dba,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11927ee4789584d4c89c8c0de6a8b6c8, type: 2}
     - target: {fileID: 919132149155446097, guid: 2419976f393ac58468965d27e9d51dba,
         type: 3}
       propertyPath: m_Name
