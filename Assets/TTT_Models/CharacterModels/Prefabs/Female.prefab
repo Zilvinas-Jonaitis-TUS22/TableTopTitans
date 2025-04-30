@@ -90,30 +90,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5818183818393804737, guid: 82e9c4009983a3341b9d9acb8bb23846,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6026171824740125089, guid: 82e9c4009983a3341b9d9acb8bb23846,
         type: 3}
       propertyPath: m_Name
       value: FemaleFigurine Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6417022118716555876, guid: 82e9c4009983a3341b9d9acb8bb23846,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7237884494743100157, guid: 82e9c4009983a3341b9d9acb8bb23846,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135923453098823656, guid: 82e9c4009983a3341b9d9acb8bb23846,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
