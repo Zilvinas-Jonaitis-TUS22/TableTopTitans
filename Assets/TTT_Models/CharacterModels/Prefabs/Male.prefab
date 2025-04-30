@@ -40,6 +40,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 413254230909796732}
     m_Modifications:
+    - target: {fileID: 460329180102962130, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924278644702538728, guid: 3183b23fca22dad47b00861a91eccc45,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,6 +99,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MaleFigurine Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687869747898058344, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010054536091368431, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730689159058994227, guid: 3183b23fca22dad47b00861a91eccc45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
