@@ -15,6 +15,9 @@ public class SpawnDiamondPrefab : MonoBehaviour
     public float minRollSpeed = 30f; // Minimum speed to consider it a valid roll
     private float highestSpeed = 0f;
 
+    private float gracePeriod = 1.0f; // Time in seconds to ignore rolling logic after spawn
+    private float timeSinceSpawn = 0f;
+
     private DiceType diceType;
 
     private void Awake()
@@ -26,41 +29,46 @@ public class SpawnDiamondPrefab : MonoBehaviour
         {
             Debug.LogWarning("DiceType component is missing on this dice!");
         }
+        timeSinceSpawn = 0f;
     }
 
     private void Update()
-{
-    float currentSpeed = _rigidbody.velocity.magnitude;
-
-    // Track peak speed
-    if (currentSpeed > highestSpeed)
     {
-        highestSpeed = currentSpeed;
-    }
+        timeSinceSpawn += Time.deltaTime;
 
-    if (currentSpeed < stillThreshold)
-    {
-        stillTimer += Time.deltaTime;
+        // Ignore logic until grace period has passed
+        if (timeSinceSpawn < gracePeriod) return;
 
-        if (stillTimer >= stillTimeRequired && !hasStopped)
+        float currentSpeed = _rigidbody.velocity.magnitude;
+
+        if (currentSpeed > highestSpeed)
         {
-            hasStopped = true;
+            highestSpeed = currentSpeed;
+        }
 
-            if (highestSpeed >= minRollSpeed)
+        if (currentSpeed < stillThreshold)
+        {
+            stillTimer += Time.deltaTime;
+
+            if (stillTimer >= stillTimeRequired && !hasStopped)
             {
-                SpawnNumberDisplay();
-            }
+                hasStopped = true;
 
-          
-            highestSpeed = 0f;
+                if (highestSpeed >= minRollSpeed)
+                {
+                    SpawnNumberDisplay();
+                }
+
+                highestSpeed = 0f;
+            }
+        }
+        else
+        {
+            stillTimer = 0f;
+            hasStopped = false;
         }
     }
-    else
-    {
-        stillTimer = 0f;
-        hasStopped = false;
-    }
-}
+
 
 
     private void SpawnNumberDisplay()
@@ -70,7 +78,7 @@ public class SpawnDiamondPrefab : MonoBehaviour
         Vector3 spawnPos = transform.position + Vector3.up * 0.2f;
         Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f); // Face upward
 
-        GameObject display = Instantiate(numberPrefab, spawnPos, rotation);
+        GameObject display = Instantiate(numberPrefab, spawnPos, rotation, transform);
 
         DiceNumberDisplay displayScript = display.GetComponent<DiceNumberDisplay>();
         if (displayScript != null)
