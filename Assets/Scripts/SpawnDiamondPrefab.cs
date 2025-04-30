@@ -7,40 +7,38 @@ public class SpawnDiamondPrefab : MonoBehaviour
 {
     public GameObject numberPrefab; // Assign your TMP number prefab here
     private Rigidbody _rigidbody;
-    private bool hasStopped = false;
+
     private float stillThreshold = 0.05f;
     private float stillTimeRequired = 1.0f;
     private float stillTimer = 0f;
 
-    public float minRollSpeed = 30f; // Minimum speed to consider it a valid roll
+    private float minRollSpeed = 4f; // Minimum speed to consider it a valid roll
     private float highestSpeed = 0f;
 
-    private float gracePeriod = 1.0f; // Time in seconds to ignore rolling logic after spawn
-    private float timeSinceSpawn = 0f;
-
     private DiceType diceType;
+    private bool hasStopped = false;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         diceType = GetComponent<DiceType>();
 
+        if (numberPrefab == null)
+        {
+            Debug.LogError("Number Prefab is NOT assigned!");
+        }
+
         if (diceType == null)
         {
             Debug.LogWarning("DiceType component is missing on this dice!");
         }
-        timeSinceSpawn = 0f;
     }
 
     private void Update()
     {
-        timeSinceSpawn += Time.deltaTime;
-
-        // Ignore logic until grace period has passed
-        if (timeSinceSpawn < gracePeriod) return;
-
         float currentSpeed = _rigidbody.velocity.magnitude;
 
+        // Track the highest speed
         if (currentSpeed > highestSpeed)
         {
             highestSpeed = currentSpeed;
@@ -56,26 +54,26 @@ public class SpawnDiamondPrefab : MonoBehaviour
 
                 if (highestSpeed >= minRollSpeed)
                 {
+                    Debug.Log("Spawning number display");
                     SpawnNumberDisplay();
                 }
 
-                highestSpeed = 0f;
+                highestSpeed = 0f; // Reset speed
             }
         }
         else
         {
+            // Dice is still moving — reset
             stillTimer = 0f;
             hasStopped = false;
         }
     }
 
-
-
     private void SpawnNumberDisplay()
     {
         if (diceType == null || numberPrefab == null) return;
 
-        Vector3 spawnPos = transform.position + Vector3.up * 0.2f;
+        Vector3 spawnPos = transform.position + Vector3.up * 0.5f; // Adjust height
         Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f); // Face upward
 
         GameObject display = Instantiate(numberPrefab, spawnPos, rotation, transform);
@@ -91,6 +89,6 @@ public class SpawnDiamondPrefab : MonoBehaviour
             Debug.LogWarning("DiceNumberDisplay script missing on number prefab!");
         }
 
-        Destroy(display, 10f); // Automatically destroy after 10 seconds
+        Destroy(display, 10f);
     }
 }

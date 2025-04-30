@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 2562946456952690206}
   - component: {fileID: 8005555778445416872}
   - component: {fileID: 1187020162010900161}
+  - component: {fileID: 7727480778666229214}
   m_Layer: 4
   m_Name: Distance_D20
   m_TagString: Untagged
@@ -662,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 932073871
+  GlobalObjectIdHash: 3873219200
   InScenePlacedSourceGlobalObjectIdHash: 2771175414
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -862,6 +863,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberPrefab: {fileID: 2261310730328178381, guid: 9118050789449a74c925c4351cbf5bb5,
     type: 3}
+--- !u!114 &7727480778666229214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741506913946083323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1f6e4078341524d9c1a49db7e9db3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7458600306588764674
 GameObject:
   m_ObjectHideFlags: 0
