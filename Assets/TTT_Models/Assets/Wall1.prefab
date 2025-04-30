@@ -284,6 +284,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR-Wall1
       objectReference: {fileID: 0}
+    - target: {fileID: 8357495078302363231, guid: 01b39791e7dba9d4b8035683611a878b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b14bee53c65aba42aee60fd2d568750, type: 2}
     - target: {fileID: 8878922837862362977, guid: 01b39791e7dba9d4b8035683611a878b,
         type: 3}
       propertyPath: _rigidbody
