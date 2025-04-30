@@ -60,6 +60,7 @@ public class SpawnObject : MonoBehaviour
         {
             StartCoroutine(EnableGravityAfterDelay(rb, 0.1f));
         }
+        PortalOpen();
     }
 
     private bool IsObjectWithinSpawnArea(GameObject obj)
@@ -109,4 +110,10 @@ public class SpawnObject : MonoBehaviour
     public void SpawnD10() => SpawnObjectAtPosition(D10Prefab);
     public void SpawnD12() => SpawnObjectAtPosition(D12Prefab);
     public void SpawnD20() => SpawnObjectAtPosition(D20Prefab);
+
+    public void PortalOpen()
+    {
+        //waoiofh
+
+    }
 }
