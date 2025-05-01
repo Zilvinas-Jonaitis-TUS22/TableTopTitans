@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 9197395353976297251}
   - component: {fileID: 3912707799315282946}
   - component: {fileID: 4207787219300381838}
-  - component: {fileID: 8292489432637461304}
+  - component: {fileID: 7369940206561711259}
   - component: {fileID: 792585667907888674}
   - component: {fileID: 6940041352974300533}
   - component: {fileID: 5054660833388227567}
@@ -1220,9 +1220,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 3
 --- !u!114 &9197395353976297251
 MonoBehaviour:
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseGravity: 1
---- !u!114 &8292489432637461304
+--- !u!114 &7369940206561711259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1295,8 +1295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1729931781
-  InScenePlacedSourceGlobalObjectIdHash: 4070257746
+  GlobalObjectIdHash: 3722260072
+  InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -1482,7 +1482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberPrefab: {fileID: 2261310730328178381, guid: 9118050789449a74c925c4351cbf5bb5,
     type: 3}
-  minRollSpeed: 30
 --- !u!114 &113587520154036220
 MonoBehaviour:
   m_ObjectHideFlags: 0
