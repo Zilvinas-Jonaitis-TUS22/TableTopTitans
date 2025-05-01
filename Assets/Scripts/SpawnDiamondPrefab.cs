@@ -12,7 +12,7 @@ public class SpawnDiamondPrefab : MonoBehaviour
     private float stillTimeRequired = 1.0f;
     private float stillTimer = 0f;
 
-    private float minRollSpeed = 4f; // Minimum speed to consider it a valid roll
+    private float minRollSpeed = 2f; // Minimum speed to consider it a valid roll
     private float highestSpeed = 0f;
 
     private DiceType diceType;
@@ -73,11 +73,11 @@ public class SpawnDiamondPrefab : MonoBehaviour
     {
         if (diceType == null || numberPrefab == null) return;
 
-        Vector3 spawnPos = transform.position + Vector3.up * 0.5f; // Adjust height
+        Vector3 spawnPos = transform.position + Vector3.up * 0.25f; // Adjust height
         Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f); // Face upward
 
         GameObject display = Instantiate(numberPrefab, spawnPos, rotation, transform);
-        display.transform.localScale = new Vector3(-0.5f, 0.8f, 0.8f);
+        display.transform.localScale = new Vector3(-0.4f, 0.7f, 0.7f);
 
         DiceNumberDisplay displayScript = display.GetComponent<DiceNumberDisplay>();
         if (displayScript != null)
